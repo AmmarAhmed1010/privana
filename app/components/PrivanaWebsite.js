@@ -56,7 +56,7 @@ const FlowStep = ({ icon: Icon, title, description, index, isLast }) => {
       </div>
       <div className="flex-1">
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-300">{description}</p>
+        <p className="text-white">{description}</p>
       </div>
       {!isLast && (
         <motion.div
@@ -81,8 +81,8 @@ const TeamCard = ({ name, role, description }) => {
         {name.charAt(0)}
       </motion.div>
       <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
-      <p className="text-cyan-400 mb-3">{role}</p>
-      <p className="text-gray-300 text-sm">{description}</p>
+      <p className="text-purple-400 mb-3">{role}</p>
+      <p className="text-white text-sm">{description}</p>
     </GlowCard>
   );
 };
@@ -90,22 +90,8 @@ const TeamCard = ({ name, role, description }) => {
 export default function PrivanaWebsite() {
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const [activeQuestion, setActiveQuestion] = useState(null);
 
-  const questions = [
-    {
-      q: "How do you ensure legal compliance in Switzerland?",
-      a: "We align with FADP, ZertES, and GDPR—no PII on-chain, full user consent."
-    },
-    {
-      q: "Can this expand beyond real estate?",
-      a: "Yes, our platform is industry-agnostic and can be used in banking, healthcare, and more."
-    },
-    {
-      q: "How secure is the blockchain technology?",
-      a: "We use tamper-proof blockchain technology with zero-knowledge proofs for maximum security."
-    }
-  ];
+
 
   return (
     <div className="bg-black text-white font-['Inter',sans-serif] overflow-x-hidden">
@@ -143,7 +129,7 @@ export default function PrivanaWebsite() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-2xl md:text-3xl text-gray-300 mb-8 font-light"
+            className="text-2xl md:text-3xl text-white mb-8 font-light"
           >
             One Identity. Trusted Everywhere.
           </motion.p>
@@ -152,9 +138,9 @@ export default function PrivanaWebsite() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.1 }}
-            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-lg text-purple-300 mb-12 max-w-2xl mx-auto"
           >
-            Decentralized Digital Identity for Real Estate in Switzerland
+            Decentralized Digital Identity for Real Estate
           </motion.p>
           
           <motion.div
@@ -163,7 +149,7 @@ export default function PrivanaWebsite() {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="animate-bounce"
           >
-            <ChevronDown className="w-8 h-8 text-cyan-400 mx-auto" />
+            <ChevronDown className="w-8 h-8 text-purple-400 mx-auto" />
           </motion.div>
         </div>
       </section>
@@ -175,7 +161,7 @@ export default function PrivanaWebsite() {
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-8 text-red-400"
+            className="text-5xl font-bold mb-8 text-purple-400"
           >
             The Problem
           </motion.h2>
@@ -185,13 +171,13 @@ export default function PrivanaWebsite() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-left max-w-4xl mx-auto"
           >
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+            <p className="text-xl text-white leading-relaxed mb-6">
               In the real estate market, verifying the identity of buyers, renters, and property owners, along with validating the authenticity of documents (like ownership papers, lease agreements, and NOCs), is{" "}
-              <span className="text-red-400 font-semibold">manual</span>,{" "}
-              <span className="text-red-400 font-semibold">time-consuming</span>, and{" "}
-              <span className="text-red-400 font-semibold">vulnerable to fraud</span>.
+              <span className="text-purple-400 font-semibold">manual</span>,{" "}
+              <span className="text-purple-400 font-semibold">time-consuming</span>, and{" "}
+              <span className="text-purple-400 font-semibold">vulnerable to fraud</span>.
             </p>
-            <p className="text-lg text-gray-400">
+            <p className="text-lg text-purple-300">
               There is no trusted, universal system to instantly verify people and documents during a transaction — especially in peer-to-peer or cross-border deals.
             </p>
           </motion.div>
@@ -213,11 +199,11 @@ export default function PrivanaWebsite() {
           <div className="grid lg:grid-cols-3 gap-8">
             <GlowCard>
               <div className="text-left">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
-                  <Users className="w-8 h-8 text-red-400" />
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-8 h-8 text-purple-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">For Buyers and Renters</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
+                <ul className="text-white space-y-2 text-sm">
                   <li>• Lack of trust in agents or landlords; fear of falling for scams</li>
                   <li>• No easy way to verify ownership or legitimacy of property documents</li>
                   <li>• Delayed deals due to slow, offline paperwork and manual verifications</li>
@@ -227,11 +213,11 @@ export default function PrivanaWebsite() {
             
             <GlowCard>
               <div className="text-left">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-red-400" />
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="w-8 h-8 text-purple-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">For Sellers and Landlords</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
+                <ul className="text-white space-y-2 text-sm">
                   <li>• Difficulty in proving ownership quickly to serious buyers</li>
                   <li>• Risk of dealing with fake identities or bad actors</li>
                   <li>• Manual identity verification (KYC) is costly and inconsistent</li>
@@ -241,11 +227,11 @@ export default function PrivanaWebsite() {
             
             <GlowCard>
               <div className="text-left">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
-                  <Globe className="w-8 h-8 text-red-400" />
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Globe className="w-8 h-8 text-purple-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">For Real Estate Platforms</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
+                <ul className="text-white space-y-2 text-sm">
                   <li>• Limited standardization for document verification</li>
                   <li>• Legal liability in case of fraudulent listings or transactions</li>
                   <li>• Users lose confidence in the platform's security and trustworthiness</li>
@@ -268,7 +254,7 @@ export default function PrivanaWebsite() {
             <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Our Solution
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               A mobile digital identity wallet powered by blockchain, Self-Sovereign Identity, and Zero-Knowledge Proofs.
             </p>
           </motion.div>
@@ -284,7 +270,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">One-time Verification</h3>
-                  <p className="text-gray-300">Verified once by trusted authorities (government, notary, bank)</p>
+                  <p className="text-white">Verified once by trusted authorities (government, notary, bank)</p>
                 </div>
               </div>
               
@@ -292,7 +278,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">User Control</h3>
-                  <p className="text-gray-300">Users own their credentials—share only proofs, not documents</p>
+                  <p className="text-white">Users own their credentials—share only proofs, not documents</p>
                 </div>
               </div>
               
@@ -300,7 +286,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Instant Verification</h3>
-                  <p className="text-gray-300">Agencies verify instantly—no PII stored, no paperwork</p>
+                  <p className="text-white">Agencies verify instantly—no PII stored, no paperwork</p>
                 </div>
               </div>
             </motion.div>
@@ -314,7 +300,7 @@ export default function PrivanaWebsite() {
               <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl p-8 backdrop-blur-sm border border-cyan-500/30">
                 <Smartphone className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-center text-white mb-4">Digital Identity Wallet</h3>
-                <p className="text-center text-gray-300">Secure, private, and user-controlled</p>
+                <p className="text-center text-white">Secure, private, and user-controlled</p>
               </div>
             </motion.div>
           </div>
@@ -380,7 +366,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Trust is Foundation</h3>
-                  <p className="text-gray-300">Trust is the foundation of real estate — without it, transactions fall apart, especially in digital-first or cross-border scenarios.</p>
+                  <p className="text-white">Trust is the foundation of real estate — without it, transactions fall apart, especially in digital-first or cross-border scenarios.</p>
                 </div>
               </div>
               
@@ -388,7 +374,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Fraud is Rising</h3>
-                  <p className="text-gray-300">Real estate fraud is on the rise globally — with billions lost annually due to fake identities or forged documents.</p>
+                  <p className="text-white">Real estate fraud is on the rise globally — with billions lost annually due to fake identities or forged documents.</p>
                 </div>
               </div>
               
@@ -396,7 +382,7 @@ export default function PrivanaWebsite() {
                 <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Regulatory Alignment</h3>
-                  <p className="text-gray-300">Governments and fintech regulators are pushing for digital KYC and document digitization — you're aligning with the future of regulation.</p>
+                  <p className="text-white">Governments and fintech regulators are pushing for digital KYC and document digitization — you're aligning with the future of regulation.</p>
                 </div>
               </div>
             </motion.div>
@@ -407,22 +393,22 @@ export default function PrivanaWebsite() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 backdrop-blur-sm border border-cyan-500/20"
             >
-              <h3 className="text-2xl font-bold mb-6 text-cyan-400">Our Solution Can:</h3>
-              <ul className="space-y-4 text-gray-300">
+              <h3 className="text-2xl font-bold mb-6 text-purple-400">Our Solution Can:</h3>
+              <ul className="space-y-4 text-white">
                 <li className="flex items-start gap-3">
-                  <Zap className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <Zap className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                   <span><strong>Speed up transactions</strong> dramatically</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <Shield className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                   <span><strong>Reduce fraud</strong> dramatically</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Users className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <Users className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                   <span><strong>Build trust</strong> between all parties</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <Globe className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                   <span><strong>Open access</strong> to verified, secure real estate deals for a broader market</span>
                 </li>
               </ul>
@@ -479,7 +465,7 @@ export default function PrivanaWebsite() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+            className="text-xl text-white mb-12 max-w-2xl mx-auto"
           >
             Join us in revolutionizing digital identity for the Swiss real estate market and beyond.
           </motion.p>
@@ -504,9 +490,9 @@ export default function PrivanaWebsite() {
           <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-xl font-bold">
             P
           </div>
-          <p className="text-gray-400 mb-4">© 2024 Privana. All rights reserved.</p>
-          <p className="text-gray-500 text-sm">
-            Decentralized Digital Identity for Real Estate in Switzerland
+          <p className="text-white mb-4">© 2024 Privana. All rights reserved.</p>
+          <p className="text-purple-300 text-sm">
+            Decentralized Digital Identity for Real Estate      
           </p>
         </div>
       </footer>
