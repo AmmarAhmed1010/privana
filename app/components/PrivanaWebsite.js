@@ -114,10 +114,7 @@ export default function PrivanaWebsite() {
         style={{ y: backgroundY }}
         className="fixed inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
-      </motion.div>
+        </motion.div>
 
       {/* Header Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
@@ -173,7 +170,7 @@ export default function PrivanaWebsite() {
 
       {/* Problem Section */}
       <AnimatedSection className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -182,18 +179,22 @@ export default function PrivanaWebsite() {
           >
             The Problem
           </motion.h2>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl text-gray-300 leading-relaxed"
+            className="text-left max-w-4xl mx-auto"
           >
-            Identity verification is{" "}
-            <span className="text-red-400 font-semibold">slow</span>,{" "}
-            <span className="text-red-400 font-semibold">repetitive</span>, and{" "}
-            <span className="text-red-400 font-semibold">insecure</span>{" "}
-            in real estate.
-          </motion.p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              In the real estate market, verifying the identity of buyers, renters, and property owners, along with validating the authenticity of documents (like ownership papers, lease agreements, and NOCs), is{" "}
+              <span className="text-red-400 font-semibold">manual</span>,{" "}
+              <span className="text-red-400 font-semibold">time-consuming</span>, and{" "}
+              <span className="text-red-400 font-semibold">vulnerable to fraud</span>.
+            </p>
+            <p className="text-lg text-gray-400">
+              There is no trusted, universal system to instantly verify people and documents during a transaction — especially in peer-to-peer or cross-border deals.
+            </p>
+          </motion.div>
         </div>
       </AnimatedSection>
 
@@ -209,34 +210,46 @@ export default function PrivanaWebsite() {
             Top 3 Pain Points
           </motion.h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             <GlowCard>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-red-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Redundancy</h3>
-                <p className="text-gray-300">Clients must submit the same documents to every party (agent, notary, bank).</p>
-              </div>
-            </GlowCard>
-            
-            <GlowCard>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-red-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Fraud & Privacy Risk</h3>
-                <p className="text-gray-300">Centralized document storage is vulnerable to breaches and forgery.</p>
-              </div>
-            </GlowCard>
-            
-            <GlowCard>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-left">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
                   <Users className="w-8 h-8 text-red-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Compliance Burden</h3>
-                <p className="text-gray-300">Agencies face costly, manual KYC/AML checks.</p>
+                <h3 className="text-xl font-bold mb-4 text-white">For Buyers and Renters</h3>
+                <ul className="text-gray-300 space-y-2 text-sm">
+                  <li>• Lack of trust in agents or landlords; fear of falling for scams</li>
+                  <li>• No easy way to verify ownership or legitimacy of property documents</li>
+                  <li>• Delayed deals due to slow, offline paperwork and manual verifications</li>
+                </ul>
+              </div>
+            </GlowCard>
+            
+            <GlowCard>
+              <div className="text-left">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="w-8 h-8 text-red-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">For Sellers and Landlords</h3>
+                <ul className="text-gray-300 space-y-2 text-sm">
+                  <li>• Difficulty in proving ownership quickly to serious buyers</li>
+                  <li>• Risk of dealing with fake identities or bad actors</li>
+                  <li>• Manual identity verification (KYC) is costly and inconsistent</li>
+                </ul>
+              </div>
+            </GlowCard>
+            
+            <GlowCard>
+              <div className="text-left">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Globe className="w-8 h-8 text-red-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">For Real Estate Platforms</h3>
+                <ul className="text-gray-300 space-y-2 text-sm">
+                  <li>• Limited standardization for document verification</li>
+                  <li>• Legal liability in case of fraudulent listings or transactions</li>
+                  <li>• Users lose confidence in the platform's security and trustworthiness</li>
+                </ul>
               </div>
             </GlowCard>
           </div>
@@ -344,8 +357,8 @@ export default function PrivanaWebsite() {
         </div>
       </AnimatedSection>
 
-      {/* Why Now Section */}
-      <AnimatedSection className="py-20 px-4 bg-gradient-to-r from-purple-900/20 to-cyan-900/20">
+      {/* Why It's Important Section */}
+      <AnimatedSection className="py-20 px-4 bg-gradient-to-r from-purple-900/10 to-cyan-900/10">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
@@ -353,7 +366,7 @@ export default function PrivanaWebsite() {
             transition={{ duration: 0.8 }}
             className="text-4xl font-bold text-center mb-16 text-white"
           >
-            Why Now? Why Blockchain?
+            Why It's Important to Solve
           </motion.h2>
           
           <div className="grid md:grid-cols-2 gap-12">
@@ -361,42 +374,56 @@ export default function PrivanaWebsite() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="space-y-6"
             >
-              <h3 className="text-2xl font-bold mb-6 text-cyan-400">Why Now?</h3>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
-                  <span>Switzerland leads in blockchain regulation and adoption</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
-                  <span>Rising fraud and data breach concerns in real estate</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Zap className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
-                  <span>Digital transformation accelerated by recent global events</span>
-                </li>
-              </ul>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Trust is Foundation</h3>
+                  <p className="text-gray-300">Trust is the foundation of real estate — without it, transactions fall apart, especially in digital-first or cross-border scenarios.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Fraud is Rising</h3>
+                  <p className="text-gray-300">Real estate fraud is on the rise globally — with billions lost annually due to fake identities or forged documents.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Regulatory Alignment</h3>
+                  <p className="text-gray-300">Governments and fintech regulators are pushing for digital KYC and document digitization — you're aligning with the future of regulation.</p>
+                </div>
+              </div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 backdrop-blur-sm border border-cyan-500/20"
             >
-              <h3 className="text-2xl font-bold mb-6 text-purple-400">Why Blockchain?</h3>
+              <h3 className="text-2xl font-bold mb-6 text-cyan-400">Our Solution Can:</h3>
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-3">
-                  <Lock className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
-                  <span>Tamper-proof and decentralized verification</span>
+                  <Zap className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <span><strong>Speed up transactions</strong> dramatically</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Users className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
-                  <span>User-owned identity without central authority</span>
+                  <Shield className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <span><strong>Reduce fraud</strong> dramatically</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
-                  <span>Zero-knowledge proofs for maximum privacy</span>
+                  <Users className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <span><strong>Build trust</strong> between all parties</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Globe className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                  <span><strong>Open access</strong> to verified, secure real estate deals for a broader market</span>
                 </li>
               </ul>
             </motion.div>
@@ -432,55 +459,6 @@ export default function PrivanaWebsite() {
               role="Co-Founder & CPO"
               description="Privacy expert specializing in zero-knowledge proof implementations"
             />
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Q&A Section */}
-      <AnimatedSection className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold text-center mb-16 text-white"
-          >
-            Questions & Answers
-          </motion.h2>
-          
-          <div className="space-y-4">
-            {questions.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border border-gray-800 rounded-lg overflow-hidden"
-              >
-                <button
-                  onClick={() => setActiveQuestion(activeQuestion === index ? null : index)}
-                  className="w-full p-6 text-left bg-gray-900/50 hover:bg-gray-800/50 transition-colors duration-300 flex justify-between items-center"
-                >
-                  <span className="text-lg font-semibold text-white">{item.q}</span>
-                  <motion.div
-                    animate={{ rotate: activeQuestion === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown className="w-5 h-5 text-cyan-400" />
-                  </motion.div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{ height: activeQuestion === index ? 'auto' : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="p-6 bg-gray-800/30 text-gray-300">
-                    {item.a}
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </AnimatedSection>
